@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+- 2.1.5
+before_script:
+- psql -c 'create database habitsu_test;' -U postgres
+env:
+  global:
+    secure: R2OUUCYvTqAlmQCGEvp4fom61tQdKSANnoZp9oxsIE3ggp7pJJU0jDagpDIrqb63PvEcbjo5r4CKNajnG5nj78BZx6ofGXyfXhGtLVBQGCT7eGreyjyo0FVNNgNWNeNrul6XG/30uoGgU4HZyu1706W4QHQcx6Ya7yTKoIOW6Vg=
+
