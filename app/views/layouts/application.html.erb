@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HabitCoach</title>
+  <title>Habitsu</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
@@ -32,7 +32,9 @@
     </div>
   <%- end -%>
 
-  <%= yield %>
+  <div class="row">
+    <%= yield %>
+  </div>
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>

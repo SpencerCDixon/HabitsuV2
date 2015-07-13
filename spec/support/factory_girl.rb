@@ -7,4 +7,8 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :quote do
+    text "Something fired up to motivate people"
+    author "Obama"
+  end
 end
