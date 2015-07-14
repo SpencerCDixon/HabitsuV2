@@ -1,0 +1,36 @@
+<h1>Create a new Habit</h1>
+
+<%= form_for @habit do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.fields_for :frequency do |ff| %>
+    <%= ff.label :monday %>
+    <%= ff.check_box :monday %>
+
+    <%= ff.label :tuesday %>
+    <%= ff.check_box :tuesday %>
+
+    <%= ff.label :wednesday %>
+    <%= ff.check_box :wednesday %>
+
+    <%= ff.label :thursday %>
+    <%= ff.check_box:thursday %>
+
+    <%= ff.label :friday %>
+    <%= ff.check_box :friday %>
+
+    <%= ff.label :saturday %>
+    <%= ff.check_box :saturday %>
+
+    <%= ff.label :sunday %>
+    <%= ff.check_box :sunday %>
+
+    <%= ff.label :daily %>
+    <%= ff.check_box :daily %>
+  <% end %>
+
+  <%= f.submit "Add Habit", class: "button tiny success" %>
+<% end %>
+
+
