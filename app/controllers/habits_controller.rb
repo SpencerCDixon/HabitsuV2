@@ -15,7 +15,6 @@ class HabitsController < ApplicationController
   private
 
   def habit_params
-    # TODO: Figure out how to properly send check box params haha
     params.require(:habit).permit(
       :name, frequency: [
         :monday, :tuesday,

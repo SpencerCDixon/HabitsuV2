@@ -4,7 +4,7 @@ describe HabitBuilder do
   describe "#build" do
     let(:user) { FactoryGirl.create(:user) }
     it "associates current user properly" do
-      params = { name: 'brushing teeth', frequency: { "daily" => "1" } }
+      params = { name: "brushing teeth", frequency: { "daily" => "1" } }
       HabitBuilder.new(user, params).build
       habit = Habit.last
 
@@ -12,7 +12,7 @@ describe HabitBuilder do
     end
 
     it "uses daily for frequency if selected" do
-      params = { name: 'brushing teeth', frequency: { "daily" => "1" } }
+      params = { name: "brushing teeth", frequency: { "daily" => "1" } }
       HabitBuilder.new(user, params).build
       habit = Habit.last
 
@@ -20,7 +20,8 @@ describe HabitBuilder do
     end
 
     it "concacts days of the week with a comma if daily is not selected" do
-      params = { name: 'brushing teeth', frequency: { "monday" => "1", "tuesday" => "1" } }
+      params = { name: 'brushing teeth',
+                 frequency: { "monday" => "1", "tuesday" => "1" } }
       HabitBuilder.new(user, params).build
       habit = Habit.last
 
