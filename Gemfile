@@ -4,6 +4,7 @@ ruby '2.1.5'
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'devise'
+gem 'twilio-ruby'
 
 # Assets
 gem 'sass-rails', '~> 5.0'

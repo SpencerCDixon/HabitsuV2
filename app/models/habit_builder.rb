@@ -1,5 +1,4 @@
 class HabitBuilder
-
   attr_reader :user, :params
   def initialize(user, params)
     @user, @params = user, params

@@ -7,5 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :habits,
     dependent: :destroy
+
+  # TODO: Handle TempUser better.
+  # TODO: Add phone_number validation to ensure numbers are formatted correctly
+  def self.from_phone(phone_number)
+    where(phone_number: phone_number) || TemporaryUser.new
+  end
 end
 

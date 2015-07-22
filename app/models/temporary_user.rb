@@ -1,0 +1,2 @@
+class TemporaryUser
+end
