@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resource :dashboard, only: :show
   resources :habits, only: [:new, :create]
+
+  post '/twilio/reply' => "twilio#reply"
 end
