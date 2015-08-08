@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :habits,
     dependent: :destroy
+  has_many :daily_habits
 
   # TODO: Handle TempUser better.
   # TODO: Add phone_number validation to ensure numbers are formatted correctly

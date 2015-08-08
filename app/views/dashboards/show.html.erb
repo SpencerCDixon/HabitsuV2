@@ -3,3 +3,10 @@
 <h2><%= @quote.text %></h2>
 
 <%= link_to 'Add habit', new_habit_path, class: 'button tiny success' %>
+
+<ul>
+  <% @habits.each do |habit| %>
+    <li><%= habit.name %></li>
+  <% end %>
+</ul>
+
