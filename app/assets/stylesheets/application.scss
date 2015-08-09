@@ -12,6 +12,14 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
 
  */
+
+// Materialize SCSS
+@import "materialize/components/color";
+$primary-color: color("blue", "darken-4") !default;
+$secondary-color: color("amber", "darken-4") !default;
+@import "materialize";
+
+
+// Custom SCSS

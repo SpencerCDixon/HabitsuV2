@@ -1,19 +1,32 @@
-<h1>Welcome, <%= current_user.email %> </h1>
+<h5>Welcome, <%= current_user.email %> </h5>
 
-<h2><%= @quote.text %></h2>
+<blockquote>
+  <%= @quote.text %> - <%= @quote.author if @quote.author != "na" %>
+</blockquote>
 
-<%= link_to 'Add habit', new_habit_path, class: 'button tiny success' %>
+<%= link_to 'Add habit', new_habit_path, class: 'btn' %>
 
 <ul>
   <%- @habits.each do |habit| %>
-      <li id="habit_<%= habit.id %>">
-        <%= habit.name %>
-        <%- unless habit.completed_today? %>
-          <%= button_to 'Crushed it!',
-            habit_daily_habits_path(habit),
-            class: "button tiny" %>
-        <%- end %>
-      </li>
+    <li id="habit_<%= habit.id %>" class="card">
+      <div class="row">
+        <div class="card-content ">
+          <div class="card-title black-text">
+            <%= habit.name %>
+          </div>
+          <div>
+            <span class="badge"><%= habit.frequency %></span>
+          </div>
+        </div>
+        <div class="card-action ">
+          <%- unless habit.completed_today? %>
+            <%= button_to 'Crushed it!',
+              habit_daily_habits_path(habit),
+              class: "btn" %>
+          <%- end %>
+        </div>
+      </div>
+    </li>
   <%- end %>
 </ul>
 

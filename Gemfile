@@ -10,7 +10,7 @@ gem 'twilio-ruby'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'foundation-rails'
+gem 'materialize-sass'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -30,4 +30,5 @@ group :test do
   gem 'coveralls', require: false
   gem 'vcr'
   gem 'webmock'
+  gem 'capybara-webkit'
 end

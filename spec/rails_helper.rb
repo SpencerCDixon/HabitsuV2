@@ -16,9 +16,23 @@ Dir[Rails.root.join("lib/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
+Capybara.javascript_driver = :webkit
+
+Capybara::Webkit.configure do |config|
+  config.allow_url("https://fonts.googleapis.com/icon?family=Material+Icons")
+end
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
+
+  # config.around(:each) do |example|
+    # if example.metadata[:type] == :feature
+      # WebMock.allow_net_connect!
+      # VCR.turned_off { example.run }
+      # WebMock.disable_net_connect!
+    # end
+  # end
 
   config.infer_spec_type_from_file_location!
   config.include AuthenticationHelper

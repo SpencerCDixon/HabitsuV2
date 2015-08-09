@@ -1,4 +1,4 @@
-DefaultQuote = Struct.new(:text)
+DefaultQuote = Struct.new(:text, :author)
 class QuoteFinder
   # TODO: Logic for not displaying same quote to person
   # TODO: hit API to get list of lots of quotes
@@ -6,7 +6,7 @@ class QuoteFinder
     if quotes_exist?
       Quote.all.sample
     else
-      DefaultQuote.new("Have a kick ass day!")
+      DefaultQuote.new("Have a kick ass day!", "na")
     end
   end
 
