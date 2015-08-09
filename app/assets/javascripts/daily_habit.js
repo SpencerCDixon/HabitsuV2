@@ -12,16 +12,16 @@ $(document).ready(function() {
       data: {
         habit_id: dailyHabitID
       },
-      success: (function(_this) {
-        return function(response, status, xhr) {
+      success: (function() {
+        return function(response) {
           var msg;
           $(e.currentTarget).remove();
           msg = $(response).attr('message');
           return Materialize.toast(msg, 4000);
         };
       })(this),
-      error: (function(_this) {
-        return function(xhr, status, error) {
+      error: (function() {
+        return function() {
           return console.log('Failure');
         };
       })(this)
