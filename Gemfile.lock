@@ -46,6 +46,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.6.0)
+      capybara (>= 2.3.0, < 2.5.0)
+      json
     coderay (1.1.0)
     coveralls (0.8.2)
       json (~> 1.8)
@@ -214,6 +217,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  capybara-webkit
   coveralls
   devise
   dotenv-rails
