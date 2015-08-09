@@ -12,6 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'materialize-sass'
 
+#Getting an error when I comment this out after removing the coffee script files I had written
+gem 'coffee-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

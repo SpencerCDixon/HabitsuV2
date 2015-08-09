@@ -17,10 +17,8 @@
           </div>
         </div>
         <div class="card-action ">
-          <%- unless habit.completed_today? %>
-            <%= button_to 'Crushed it!',
-              habit_daily_habits_path(habit),
-              class: "btn" %>
+        <%- unless habit.completed_today? %>
+          <%= button_tag 'Crushed it!', type: 'submit', class: 'completeHabit btn', data: {'id' => habit.id, 'complete-url' => habit_daily_habits_path(habit) } %>
           <%- end %>
         </div>
       </div>
