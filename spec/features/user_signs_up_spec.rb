@@ -12,18 +12,18 @@ feature 'user registers', %Q{
   # * If I don't specify the required information, I am presented with
   #   an error message
 
-  # scenario 'provide valid registration information' do
-    # visit new_user_registration_path
+  scenario 'provide valid registration information' do
+    visit new_user_registration_path
 
-    # fill_in 'Email', with: 'john@example.com'
-    # fill_in 'Password', with: 'password'
-    # fill_in 'Password confirmation', with: 'password'
+    fill_in 'Email', with: 'john@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
 
-    # click_button 'Sign up'
+    click_button 'Sign up'
 
-    # expect(page).to have_content('Welcome! You have signed up successfully.')
-    # expect(page).to have_content('Sign Out')
-  # end
+    expect(page.source).to match(/Welcome! You have signed up successfully./)
+    expect(page).to have_css('a#sign-out')
+  end
 
   scenario 'provide invalid registration information' do
     visit new_user_registration_path
