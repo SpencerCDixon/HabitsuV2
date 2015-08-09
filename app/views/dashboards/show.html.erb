@@ -5,8 +5,15 @@
 <%= link_to 'Add habit', new_habit_path, class: 'button tiny success' %>
 
 <ul>
-  <% @habits.each do |habit| %>
-    <li><%= habit.name %></li>
-  <% end %>
+  <%- @habits.each do |habit| %>
+      <li id="habit_<%= habit.id %>">
+        <%= habit.name %>
+        <%- unless habit.completed_today? %>
+          <%= button_to 'Crushed it!',
+            habit_daily_habits_path(habit),
+            class: "button tiny" %>
+        <%- end %>
+      </li>
+  <%- end %>
 </ul>
 

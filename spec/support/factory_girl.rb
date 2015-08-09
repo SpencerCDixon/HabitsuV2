@@ -11,4 +11,16 @@ FactoryGirl.define do
     text "Something fired up to motivate people"
     author "Obama"
   end
+
+  factory :habit do
+    name "Brush teeth"
+    frequency "monday, tuesday, wednesday"
+    user
+  end
+
+  factory :daily_habit do
+    habit
+    user
+  end
 end
+
