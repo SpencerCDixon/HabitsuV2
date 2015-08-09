@@ -1,36 +1,59 @@
 <h1>Create a new Habit</h1>
 
-<%= form_for @habit do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="row">
+  <%= form_for @habit, class: "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    </div>
 
-  <%= f.fields_for :frequency do |ff| %>
-    <%= ff.label :monday %>
-    <%= ff.check_box :monday %>
+    <%= f.fields_for :frequency do |ff| %>
+      <p>
+        <%= ff.check_box :monday, for: :monday %>
+        <%= ff.label :monday %>
+      </p>
 
-    <%= ff.label :tuesday %>
-    <%= ff.check_box :tuesday %>
+      <p>
+        <%= ff.check_box :tuesday %>
+        <%= ff.label :tuesday %>
+      </p>
 
-    <%= ff.label :wednesday %>
-    <%= ff.check_box :wednesday %>
+      <p>
+        <%= ff.check_box :wednesday %>
+        <%= ff.label :wednesday %>
+      </p>
 
-    <%= ff.label :thursday %>
-    <%= ff.check_box:thursday %>
+      <p>
+        <%= ff.check_box:thursday %>
+        <%= ff.label :thursday %>
+      </p>
 
-    <%= ff.label :friday %>
-    <%= ff.check_box :friday %>
+      <p>
+        <%= ff.check_box :friday %>
+        <%= ff.label :friday %>
+      </p>
 
-    <%= ff.label :saturday %>
-    <%= ff.check_box :saturday %>
+      <p>
+        <%= ff.check_box :saturday %>
+        <%= ff.label :saturday %>
+      </p>
 
-    <%= ff.label :sunday %>
-    <%= ff.check_box :sunday %>
+      <p>
+        <%= ff.check_box :sunday %>
+        <%= ff.label :sunday %>
+      </p>
 
-    <%= ff.label :daily %>
-    <%= ff.check_box :daily %>
+      <p>
+        <%= ff.check_box :daily %>
+        <%= ff.label :daily %>
+      </p>
+    <% end %>
+
+    </br>
+    <%= f.submit "Add Habit", class: "btn black white-text" %>
   <% end %>
-
-  <%= f.submit "Add Habit", class: "button tiny success" %>
-<% end %>
+</div>
 
 

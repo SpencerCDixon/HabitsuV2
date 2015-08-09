@@ -1,0 +1,12 @@
+<% content_for :extra_footer do %>
+  <% if flash %>
+    <% flash.each do |type, msg| %>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          Materialize.toast('<%= msg %>', 4000)
+        });
+      </script>
+    <% end %>
+  <% end %>
+<% end %>
+
