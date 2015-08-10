@@ -9,18 +9,18 @@ class Habit < ActiveRecord::Base
   def self.due_today
     today = Time.now.strftime("%A").downcase
     where(
-      'frequency LIKE :today OR frequency LIKE :daily',
+      "frequency LIKE :today OR frequency LIKE :daily",
       today: today,
-      daily: 'daily'
+      daily: "daily"
     )
   end
 
   def self.not_due_today
     today = Time.now.strftime("%A").downcase
     where(
-      'frequency NOT LIKE :today AND frequency NOT LIKE :daily',
+      "frequency NOT LIKE :today AND frequency NOT LIKE :daily",
       today: today,
-      daily: 'daily'
+      daily: "daily"
     )
   end
 end
