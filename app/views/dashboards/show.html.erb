@@ -26,3 +26,18 @@
   <%- end %>
 </ul>
 
+<div id="due_today">
+  <h5>Due Today</h5>
+  <ul>
+    <%= render partial: "habit", collection: @habits_for_today %>
+  </ul>
+</div>
+
+<div id="due_later">
+  <h5>Due Later</h5>
+  <ul>
+    <%= render partial: "habit", collection: @habits_for_later %>
+  </ul>
+</div>
+
+

@@ -1,0 +1,19 @@
+<li id="habit_<%= habit.id %>" class="card">
+  <div class="row">
+    <div class="card-content ">
+      <div class="card-title black-text">
+        <%= habit.name %>
+      </div>
+      <div>
+        <span class="badge"><%= habit.frequency %></span>
+      </div>
+    </div>
+    <div class="card-action ">
+      <%- unless habit.completed_today? %>
+        <%= button_to 'Crushed it!',
+          habit_daily_habits_path(habit),
+          class: "btn" %>
+      <%- end %>
+    </div>
+  </div>
+</li>

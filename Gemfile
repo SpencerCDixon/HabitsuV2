@@ -30,6 +30,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'vcr'
   gem 'webmock'
+  gem 'timecop'
 end
 
 group :test do
