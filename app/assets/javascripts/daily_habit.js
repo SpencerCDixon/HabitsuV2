@@ -1,16 +1,15 @@
 $(document).ready(function() {
   return $('.completeHabit').on('click', function(e) {
-    var complete_url, dailyHabitID, div;
+    var completeURL, dailyHabitID;
     e.preventDefault();
     dailyHabitID = $(e.currentTarget).data('id');
-    complete_url = $(e.currentTarget).data('complete-url');
-    div = $(e.currentTarget);
+    completeURL = $(e.currentTarget).data('complete-url');
     return $.ajax({
-      url: complete_url,
+      url: completeURL,
       type: 'POST',
       dataType: 'json',
       data: {
-        habit_id: dailyHabitID
+        habitID: dailyHabitID
       },
       success: (function() {
         return function(response) {
